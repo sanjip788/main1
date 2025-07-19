@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>A-One IT University - Home</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Bungee+Spice&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" />
+</head>
+<body>
+
+  <section class="header">
+    <nav>
+      <a href="index.html"><img src="images/logo.png" alt="University Logo" /></a>
+      <div class="nav-links" id="navLinks">
+        <i class="fa-solid fa-xmark" onclick="hideMenu()"></i>
+        <ul>
+          <li><a href="index.html" class="active">HOME</a></li>
+          <li><a href="about.html">ABOUT</a></li>
+          <li><a href="course.html">COURSE</a></li>
+          <li><a href="blog.html">BLOG</a></li>
+          <li><a href="contact.html">CONTACT</a></li>
+        </ul>
+      </div>
+      <i class="fa-solid fa-bars" onclick="showMenu()"></i>
+    </nav>
+
+    <div class="text-box">
+      <h1>A-One IT University</h1>
+      <p>
+        Your Gateway to a Brighter Future in Tech. Learn from the best, grow with us,<br />
+        and turn your passion into a profession!
+      </p>
+      <a href="about.html" class="hero-btn">Know more about us</a>
+    </div>
+  </section>
+
+  <!-- Add other sections here like courses, campus, etc. -->
+
+  <section class="footer">
+    <h4>About Us</h4>
+    <p>
+      A-One IT University is a globally recognized institution focused on delivering top-tier <br />
+      education in Information Technology, Business, and Innovation.
+      Our mission is to empower students with the skills and confidence to thrive in a digital world.
+    </p>
+    <div class="icons">
+      <i class="fa-brands fa-facebook-f"></i>
+      <i class="fa-brands fa-twitter"></i>
+      <i class="fa-brands fa-instagram"></i>
+      <i class="fa-brands fa-linkedin-in"></i>
+    </div>
+    <p>Made with <i class="fa-regular fa-heart"></i> by our group</p>
+  </section>
+
+  <script>
+    var navLinks = document.getElementById("navLinks");
+
+    function showMenu() {
+      navLinks.style.right = "0";
+    }
+
+    function hideMenu() {
+      navLinks.style.right = "-200px";
+    }
+  </script>
+
+</body>
+</html>

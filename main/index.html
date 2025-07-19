@@ -1,0 +1,431 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>A-One IT University</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com"/>
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+    <link href="https://fonts.googleapis.com/css2?family=Bungee+Spice&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"/>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            font-family: 'Poppins', sans-serif;
+            box-sizing: border-box;
+        }
+
+        html, body {
+            scroll-behavior: smooth;
+        }
+
+        .header {
+            min-height: 100vh;
+            width: 100%;
+            background-image: linear-gradient(rgba(4,9,30,0.7), rgba(4,9,30,0.7)), url(images/banner.png);
+            background-position: center;
+            background-size: cover;
+            position: relative;
+        }
+
+        nav {
+            display: flex;
+            padding: 2% 6%;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        nav img {
+            width: 150px;
+        }
+
+        .nav-links {
+            flex: 1;
+            text-align: right;
+        }
+
+        .nav-links ul {
+            list-style: none;
+        }
+
+        .nav-links ul li {
+            display: inline-block;
+            padding: 8px 12px;
+            position: relative;
+        }
+
+        .nav-links ul li a {
+            color: #fff;
+            text-decoration: none;
+            font-size: 13px;
+        }
+
+        .text-box {
+            width: 90%;
+            color: #fff;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            text-align: center;
+        }
+
+        .text-box h1 {
+            font-size: 62px;
+        }
+
+        .text-box p {
+            margin: 10px 0 40px;
+            font-size: 14px;
+            color: #fff;
+        }
+
+        .hero-btn {
+            display: inline-block;
+            text-decoration: none;
+            color: #fff;
+            border: 1px solid #fff;
+            padding: 12px 34px;
+            font-size: 13px;
+            background: transparent;
+            position: relative;
+            cursor: pointer;
+        }
+
+        .hero-btn:hover {
+            border: 1px solid #f44336;
+            background: #f44336;
+            transition: 0.5s;
+        }
+
+        nav .fa {
+            display: none;
+        }
+
+        .course, .campus, .facilities, .testimonials, .cta, .footer {
+            width: 80%;
+            margin: auto;
+            text-align: center;
+            padding-top: 100px;
+        }
+
+        h1 {
+            font-size: 36px;
+            font-weight: 600;
+        }
+
+        p {
+            color: #777;
+            font-size: 14px;
+            line-height: 22px;
+            padding: 10px;
+        }
+
+        .row {
+            margin-top: 5%;
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+        }
+
+        .course-col, .campus-col, .facilities-col, .testimonial-col {
+            flex-basis: 31%;
+            background: #f5f5f5;
+            border-radius: 10px;
+            margin-bottom: 5%;
+            padding: 20px 12px;
+            box-sizing: border-box;
+            transition: 0.5s;
+        }
+
+        .course-col:hover, .facilities-col:hover {
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+        }
+
+        .campus-col img, .facilities-col img, .testimonial-col img {
+            width: 100%;
+            border-radius: 10px;
+        }
+
+        .layer {
+            background: rgba(226,0,0,0.7);
+            height: 100%;
+            width: 100%;
+            position: absolute;
+            top: 0;
+            left: 0;
+            transition: 0.5s;
+            opacity: 0;
+            border-radius: 10px;
+        }
+
+        .campus-col {
+            position: relative;
+            overflow: hidden;
+        }
+
+        .campus-col:hover .layer {
+            opacity: 1;
+        }
+
+        .layer h3 {
+            width: 100%;
+            font-weight: 500;
+            color: #fff;
+            font-size: 26px;
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            text-align: center;
+        }
+
+        .testimonial-col {
+            text-align: left;
+            background: #fff3f3;
+            border-radius: 10px;
+            padding: 25px;
+            cursor: pointer;
+            display: flex;
+        }
+
+        .testimonial-col img {
+            height: 40px;
+            margin-right: 20px;
+            border-radius: 50%;
+        }
+
+        .testimonial-col h3 {
+            margin-top: 15px;
+            text-align: left;
+        }
+
+        .testimonial-col .fa {
+            color: #f44336;
+        }
+
+        .cta {
+            margin: 100px auto;
+            width: 80%;
+            background-image: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url(images/banner2.jpg);
+            background-position: center;
+            background-size: cover;
+            border-radius: 10px;
+            text-align: center;
+            padding: 100px 0;
+        }
+
+        .cta h1 {
+            color: #fff;
+            margin-bottom: 40px;
+            padding: 0;
+        }
+
+        .footer h4 {
+            margin-bottom: 20px;
+            margin-top: 20px;
+            font-weight: 600;
+        }
+
+        .icons .fa-brands {
+            color: #f44336;
+            margin: 0 13px;
+            cursor: pointer;
+            padding: 18px 0;
+        }
+
+        @media(max-width: 700px) {
+            .text-box h1 {
+                font-size: 20px;
+            }
+
+            .nav-links ul li {
+                display: block;
+            }
+
+            .nav-links {
+                position: absolute;
+                background: #f44336;
+                height: 100vh;
+                width: 200px;
+                top: 0;
+                right: -200px;
+                text-align: left;
+                z-index: 2;
+                transition: 0.5s;
+            }
+
+            nav .fa {
+                display: block;
+                color: #fff;
+                margin: 10px;
+                font-size: 22px;
+                cursor: pointer;
+            }
+
+            .nav-links ul {
+                padding: 30px;
+            }
+
+            .row {
+                flex-direction: column;
+            }
+
+            .testimonial-col {
+                flex-direction: column;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <section class="header">
+        <nav>
+            <a href="index.html"><img src="images/logo.png" alt="University Logo"></a>
+            <div class="nav-links" id="navLinks">
+                <i class="fa fa-times" onclick="hideMenu()"></i>
+                <ul>
+                    <li><a href="index.html">HOME</a></li>
+                    <li><a href="about.html">ABOUT</a></li>
+                    <li><a href="course.html">COURSE</a></li>
+                    <li><a href="blog.html">BLOG</a></li>
+                    <li><a href="contact.html">CONTACT</a></li>
+                </ul>
+            </div>
+            <i class="fa fa-bars" onclick="showMenu()"></i>
+        </nav>
+        <div class="text-box">
+            <h1>A-One IT University</h1>
+            <p>Your Gateway to a Brighter Future in Tech. Learn from the best, grow with us,<br> and turn your passion into a profession!</p>
+            <a href="" class="hero-btn">Know more about us</a>
+        </div>
+    </section>
+
+    <section class="course">
+        <h1>Courses We Offer</h1>
+        <p>We provide a variety of IT and business courses tailored to industry demands and student aspirations.</p>
+        <div class="row">
+            <div class="course-col">
+                <h3>Intermediate</h3>
+                <p>Ideal for high school graduates, our intermediate programs introduce students to the basics of programming, networking, and digital literacy. Prepares students for undergraduate study.</p>
+            </div>
+            <div class="course-col">
+                <h3>Degree</h3>
+                <p>Our bachelor's degrees in Computer Science, Software Engineering, and Business IT are designed to develop deep technical knowledge and problem-solving skills needed for today's tech-driven world.</p>
+            </div>
+            <div class="course-col">
+                <h3>Post Graduation</h3>
+                <p>We offer Master’s degrees in Data Science, Cybersecurity, and IT Project Management. Programs focus on advanced technologies, research, and practical skills for leadership roles.</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="campus">
+        <h1>Our Global Campus</h1>
+        <p>With campuses located in major cities around the world, students can choose to study in the environment that suits them best.</p>
+        <div class="row">
+            <div class="campus-col">
+                <img src="images/london.png" alt="London Campus">
+                <div class="layer">
+                    <h3>LONDON</h3>
+                </div>
+            </div>
+            <div class="campus-col">
+                <img src="images/newyork.png" alt="New York Campus">
+                <div class="layer">
+                    <h3>NEW YORK</h3>
+                </div>
+            </div>
+            <div class="campus-col">
+                <img src="images/washington.png" alt="Washington Campus">
+                <div class="layer">
+                    <h3>WASHINGTON</h3>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="facilities">
+        <h1>Our Facilities</h1>
+        <p>We ensure our students have access to world-class facilities to support their academic and personal development.</p>
+        <div class="row">
+            <div class="facilities-col">
+                <img src="images/library.png" alt="Library">
+                <h3>World Class Library</h3>
+                <p>Our modern library is equipped with over 100,000 academic journals, digital resources, and collaborative study spaces for individual and group research.</p>
+            </div>
+            <div class="facilities-col">
+                <img src="images/basketball.png" alt="Basketball Court">
+                <h3>Largest Play Ground</h3>
+                <p>We believe in all-round development. Our sports facilities include football fields, basketball courts, and indoor gymnasiums open to all students.</p>
+            </div>
+            <div class="facilities-col">
+                <img src="images/cafeteria.png" alt="Cafeteria">
+                <h3>Tasty and Healthy Food</h3>
+                <p>The university cafeteria serves a wide range of healthy and affordable meals catering to all dietary needs, promoting student well-being.</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="testimonials">
+        <h1>What Our Students Say</h1>
+        <p>Hear directly from our alumni who have gone on to do amazing things.</p>
+        <div class="row">
+            <div class="testimonial-col">
+                <img src="images/user1.jpg" alt="Christine Berkley">
+                <div>
+                    <p>"A-One IT University has transformed my life. The instructors are experts and the curriculum is aligned with the job market. I landed a job at a top tech firm right after graduation!"</p>
+                    <h3>Christine Berkley</h3>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                </div>
+            </div>
+            <div class="testimonial-col">
+                <img src="images/user2.jpg" alt="David Byer">
+                <div>
+                    <p>"What I loved most was the hands-on experience and the chance to work on real-world projects. The faculty was always supportive and approachable."</p>
+                    <h3>David Byer</h3>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star-half-alt"></i>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="cta">
+        <h1>Enroll in Our Online Courses<br>From Anywhere in the World</h1>
+        <a href="" class="hero-btn">Contact Us</a>
+    </section>
+
+    <section class="footer">
+        <h4>About Us</h4>
+        <p>A-One IT University is a globally recognized institution focused on delivering top-tier <br>
+        education in the fields of Information Technology, Business, and Innovation. 
+        Our mission is to empower students with the skills and confidence to thrive in a digital world.</p>
+        <div class="icons">
+            <i class="fa-brands fa-facebook-f"></i>
+            <i class="fa-brands fa-twitter"></i>
+            <i class="fa-brands fa-instagram"></i>
+            <i class="fa-brands fa-linkedin-in"></i>
+        </div>
+        <p>Made with <i class="fa fa-heart"></i> by our group</p>
+    </section>
+
+    <script>
+        var navLinks = document.getElementById("navLinks");
+        function showMenu() {
+            navLinks.style.right = "0";
+        }
+        function hideMenu() {
+            navLinks.style.right = "-200px";
+        }
+    </script>
+</body>
+</html>
